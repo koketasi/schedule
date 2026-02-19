@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>簡単スケジュールアプリ</title>
+</head>
+<body>
+    <h1>スケジュール管理</h1>
+
+    <form method="POST">
+        <input type="text" name="task" placeholder="予定を追加">
+        <button type="submit">追加</button>
+    </form>
+
+    <ul>
+        {% for item in schedule %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
