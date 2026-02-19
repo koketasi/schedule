@@ -2,20 +2,42 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>簡単スケジュールアプリ</title>
+    <title>スケジュール試験用</title>
 </head>
 <body>
-    <h1>スケジュール管理</h1>
-
+    <h1>スケジュール更新できるんだぜ</h1>
+    <h2>ほら！</h2>
+    <h3>試しにやってくださいお願いしますよー</h3>
+    <h1>↓</h1>
+   
     <form method="POST">
         <input type="text" name="task" placeholder="予定を追加">
         <button type="submit">追加</button>
     </form>
 
+    <p>でも正直スケジュール書いたって別に人生変わらないから意味ないって思っちゃうよねー</p>
+    {%if day==[] or data==[]%}
+    <p>何も書かれてない</p>  
+    {%else%}  
+    <table border="12">
+            <tr>
+                <th>日付</th>
+                <th>ハッピーイベント!!</th>
+            </tr>         
+            {% for i,j in day.items() %}
+            <tr>
+                <td>{{i}}</td>
+                <td>{{j}}</td>
+            </tr>
+            {% endfor %}
+        </table> 
+    {% endif %}
     <ul>
-        {% for item in schedule %}
+        {% for item in data %}
             <li>{{ item }}</li>
         {% endfor %}
     </ul>
+<a href="{{url_for('form')}}">真新しい画面に行くよーーーー</a>
+    
 </body>
 </html>
