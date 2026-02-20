@@ -6,7 +6,7 @@
     {#<link rel="stylesheet" href="{{url_for('static',filename=style.css)}}">
     #}
     </head>
-<body>
+<body>    <h1>ようこそー！！</h1>
     <div style="background-color: red;">私だよ
         <div style='color:white;'>kusottare-</div>
     </div>
@@ -33,8 +33,38 @@
         <div style="background-color:aliceblue">77</div>
     </div>
 
-    <h1>ようこそー！！</h1>
-    <a href="/">戻れ戻れー</a>
-    <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg') }}">
+
+    
+    <br>
+    <ol>
+        <li>バンド</li>
+        <li>現地バンド</li>
+    </ol>
+    <br> 
+    <div>
+        <label for="apple">アップル好きそうだからもうチェック入れといたよ！(ちなこの文タップしても入力される)</label>
+        <input type="checkbox"name="fruits"value='apple'checked="checked" id='apple'>
+    </div>
+    <div>
+        <label for="t">タイピング用(ちなこれタップしても入力される)</label>
+        <input type="text"name='type' placeholder='type'cols="30" rows="3"id='t' >
+    </div>
+    <br>
+    
+    <form method="POST" action="{{url_for('form')}}">
+    <div>
+        性別
+        <label for="he"><input type="radio"name='sex'value='男性' id="he">男性</label>
+        <label for='she'><input type="radio"name='sex'value='女性' id="she">女性</label>
+        <button>送信だー！！</button>
+    </div>
+    </form>
+    <div>{{gender['sex']}} これが君のタイプだね</div>
+    <br>
+
+    <a href="/">
+        戻るためにはスイーツをつんつんして！
+        <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg') }}">
+    </a>
 </body>
 </html>

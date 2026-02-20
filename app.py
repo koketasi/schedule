@@ -28,9 +28,15 @@ def index():
        # return redirect("/")#ボタン押したら更新?
     return render_template("index.html",day=day)
 
-@app.route('/form')
+@app.route("/form",methods=['POST','GET'])
 def form():
-    return render_template("form.html")
+    gender={}
+    gender['sex']=request.form.get('sex')
+    #if request.method == "POST":
+    #    return redirect(url_for('form'))
+    return render_template("form.html",gender=gender)
+ 
+
 
 @app.route("/register",methods=['POST'])
 def register():
@@ -40,6 +46,8 @@ def register():
     con.execute('INSERT INTO schedule1 VALUES(?,?)',[date2,event2])
     con.commit()
     con.close()
+
+
     return redirect(url_for('index'))
 
 if __name__ == "__main__":

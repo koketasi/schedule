@@ -17,8 +17,8 @@
             <th>何を起こさせるか</th>
         </tr>         
         <tr>
-            <td><input type='text' name='date'></td>
-            <td><input type='text' name='event'></td>
+            <td><input type='text' name='date' placeholder='日付を入力するチャンス！'></td>
+            <td><input type='text' name='event' placeholder='革命チャンス！'cols="30" rows="3" ></td>
         </tr>
 
     </table> 
@@ -50,7 +50,7 @@
         {% endfor %}
     </ul>
 
-<a href="./form">真新しい画面に行くよーーーー</a>
+<a href="{{url_for('form')}}">真新しい画面に行くよーーーー</a>
     
 </body>
 </html>
