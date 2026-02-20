@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>新規画面</title>
-</head>
+    {#<link rel="stylesheet" href="{{url_for('static',filename=style.css)}}">
+    #}
+    </head>
 <body>
+    <div style="background-color: red;">私だよ
+        <div style='color:white;'>kusottare-</div>
+    </div>
+
+    <div style='display: flex;  height:200px;'>
+    <div style="background-color: pink; width:20%; height:100%">横だね</div>
+    <div style="background-color: green; width:80%; height:100%">横だお</div>
+    </div>
+
+    <div style=' width:100%; height:300px;'>
+        <div style="background-color: red; width:100%; height:10%">ヘッダーですわ</div>
+        <div style="background-color: pink; width:50%; height:50%;margin-left: 50%;">メニュー</div>
+        <div style="background-color: green; width:50%; height:20%; margin-right:25%;margin-left:25%">値段</div>
+        <div style="background-color: blue; width:100%; height:10%;margin-bottom:10%;">フッダー</div>
+    </div>
+    <div style="background-color: yellow; width:100%; height:50px">もうええて</div>
+
+    <div style='display:grid; grid-template-columns: 1fr 4fr 1fr; gap:100px; width:100%; height:300px;'>
+        <div style="background-color: red; ">1</div>
+        <div style="background-color: pink; ">2</div>
+        <div style="background-color: green; ">33</div>
+        <div style="background-color:brown">44</div>
+        <div style="background-color:aqua">4999999</div>
+        <div style="background-color:aliceblue">77</div>
+    </div>
+
     <h1>ようこそー！！</h1>
-    <a>新しい画面だよ</a>
+    <a href="/">戻れ戻れー</a>
+    <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg') }}">
 </body>
 </html>
