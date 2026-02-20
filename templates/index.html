@@ -9,17 +9,27 @@
     <h2>ほら！</h2>
     <h3>試しにやってくださいお願いしますよー</h3>
     <h1>↓</h1>
-   
-    <form method="POST">
-        <input type="text" name="task" placeholder="予定を追加">
-        <button type="submit">追加</button>
+    <form method="POST" action="{{url_for('register')}}">
+    <table border="1">
+        <tr>
+            <th>日付</th>
+            <th>何を起こさせるか</th>
+        </tr>         
+        <tr>
+            <td><input type='text' name='date'></td>
+            <td><input type='text' name='event'></td>
+        </tr>
+
+    </table> 
+    <br>
+    <input type="submit" value="追加ボタンだお">
     </form>
 
     <p>でも正直スケジュール書いたって別に人生変わらないから意味ないって思っちゃうよねー</p>
-    {%if day==[] or data==[]%}
+    {%if day==[] %}
     <p>何も書かれてない</p>  
     {%else%}  
-    <table border="12">
+    <table border="1">
             <tr>
                 <th>日付</th>
                 <th>ハッピーイベント!!</th>
@@ -31,12 +41,14 @@
             </tr>
             {% endfor %}
         </table> 
+
     {% endif %}
     <ul>
         {% for item in data %}
             <li>{{ item }}</li>
         {% endfor %}
     </ul>
+
 <a href="{{url_for('form')}}">真新しい画面に行くよーーーー</a>
     
 </body>
