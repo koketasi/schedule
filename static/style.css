@@ -1,0 +1,26 @@
+.grid{
+    display:grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     gap:10px;
+    width:100%; 
+    height:300px;
+}
+h1{
+    color: red;
+}
+img{
+    width: 100px;
+   
+}
+div>label[for='he']{
+    color: blue;
+}
+label[for='she']{
+    color: red
+}
+label input{
+    accent-color: pink;
+}
+label+input{
+    accent-color: yellow;
+}

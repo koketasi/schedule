@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>新規画面</title>
-    {#<link rel="stylesheet" href="{{url_for('static',filename=style.css)}}">
-    #}
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    
     </head>
 <body>    <h1>ようこそー！！</h1>
     <div style="background-color: red;">私だよ
@@ -12,8 +12,8 @@
     </div>
 
     <div style='display: flex;  height:200px;'>
-    <div style="background-color: pink; width:20%; height:100%">横だね</div>
-    <div style="background-color: green; width:80%; height:100%">横だお</div>
+        <div style="background-color: pink; width:20%; height:100%">横だね</div>
+        <div style="background-color: green; width:80%; height:100%">横だお</div>
     </div>
 
     <div style=' width:100%; height:300px;'>
@@ -33,6 +33,14 @@
         <div style="background-color:aliceblue">77</div>
     </div>
 
+    <div class="grid">
+        <div style="background-color: red; ">1</div>
+        <div style="background-color: pink; ">2</div>
+        <div style="background-color: green; ">33</div>
+        <div style="background-color:brown">44</div>
+        <div style="background-color:aqua">4999999</div>
+        <div style="background-color:aliceblue">77</div>
+    </div>
 
     
     <br>
@@ -50,16 +58,26 @@
         <input type="text"name='type' placeholder='type'cols="30" rows="3"id='t' >
     </div>
     <br>
+    <header>この機能おすすめっす</header>
+    <main>これが私のメインコンテンツ
+        
+        <form method="POST" action="{{url_for('form')}}">
+        <div >
+            性別
+            <label for="he" >
+                <input type="radio"name='sex'value='男性' id="he" >男性
+            </label>
+            <label for='she'>
+                <input type="radio"name='sex'value='女性' id="she">女性
+            </label>
+            <button>送信だー！！</button>
+        </div>
+        </form>
+        <div>{{gender['sex']}} これが君のタイプだね</div>
+    </main>
+    <footer>これでおわりっす</footer>
+    <br>
     
-    <form method="POST" action="{{url_for('form')}}">
-    <div>
-        性別
-        <label for="he"><input type="radio"name='sex'value='男性' id="he">男性</label>
-        <label for='she'><input type="radio"name='sex'value='女性' id="she">女性</label>
-        <button>送信だー！！</button>
-    </div>
-    </form>
-    <div>{{gender['sex']}} これが君のタイプだね</div>
     <br>
 
     <a href="/">
