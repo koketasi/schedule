@@ -8,19 +8,19 @@
 h1{
     color: red;
 }
-img{
-    width: 100px;
-   
-}
+
 div>label[for='he']{
     color: blue;
 }
+
 label[for='she']{
     color: red
 }
+
 label input{
     accent-color: pink;
 }
+
 label+input{
     accent-color: yellow;
 }
