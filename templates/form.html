@@ -76,12 +76,31 @@
         <div>{{gender['sex']}} これが君のタイプだね</div>
     </main>
     <footer>これでおわりっす</footer>
-    <br>
-    
+    <br>          
+    <div>
+        <table>
+            <caption>表１: みんなの好きな語尾ランキング！！</caption>
+            <thead>
+                <tr>
+                    <th><span>1位</span></th>
+                    <th><span>2位</span></th>
+                    <th><span>3位</span></th>
+                </tr>
+            </thead>
+            <body>
+                <tr>
+                    <td>ペコ</td>
+                    <td>クカ</td>
+                    <td>じょなーー</td>
+                </tr>
+            </body>
+        </table>
+    </div>
     <br>
     <a href="/">
         戻るためにはスイーツをつんつんして！
-        <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg')}}" alt='パフェ' width=200px>
+        <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg')}}" alt='パフェ' width='200px'>
     </a>
+    <video src="{{url_for('static',filename='20260217_112824000_iOS.MP4')}}"  controls width='500px'></video>
 </body>
 </html>

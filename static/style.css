@@ -24,3 +24,30 @@ label input{
 label+input{
     accent-color: yellow;
 }
+div table{
+  
+    border-collapse:collapse ;
+       width:  400px; 
+}
+th,td{
+    border:solid 1px;
+    text-align:center;
+}
+th {
+
+    height: 80px;               /* 高さ指定 */
+
+    font-weight:1000;
+    background-color:rgb(228 240 245);
+}
+td{
+    font-weight:bold;
+     background-color:rgb(140,140,140,0.2);
+}
+caption{
+    caption-side:bottom;
+    padding:20px;
+}
+th span{
+    color:#ff0000;
+}
