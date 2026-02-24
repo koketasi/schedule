@@ -101,6 +101,23 @@
         戻るためにはスイーツをつんつんして！
         <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg')}}" alt='パフェ' width='200px'>
     </a>
-    <video src="{{url_for('static',filename='20260217_112824000_iOS.MP4')}}"  controls width='500px'></video>
+    
+
+    <div class="title_you">
+        <h3>ガチ適当動画だぞ</h3>
+        <h4>player</h4>
+        <video src="{{url_for('static',filename='20260217_112824000_iOS.MP4')}}" preload="metadata" controls width='500px'>
+        </video>
+    </div>
+    <br>
+
+    <div class="title_you">
+        <h4>たはは…繰り返し傍聴用</h4>
+        <audio controls  preload='auto' loop>
+            <source src="{{url_for('static',filename='Recording 5.wav')}}" type="audio/wav">
+            <source src="{{url_for('static',filename='Recording 5.mp3')}}" type="audio/mp3">
+
+        </audio>
+    </div>
 </body>
 </html>

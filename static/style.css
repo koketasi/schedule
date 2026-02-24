@@ -51,3 +51,33 @@ caption{
 th span{
     color:#ff0000;
 }
+
+.title_you{
+    position:relative;
+
+}
+video{
+        border:solid 5px gold;
+    outline:5px solid rgb(3, 239, 251);
+    outline-offset:5px;
+    margin:10px;
+   /* margin-top: 10px; 重複しないから意味ない*/
+}
+.title_you>h3{
+    position:absolute;
+    border:solid 1px red ;
+    left: 23%;
+    top:-5px;
+ 
+
+    color:rgb(255, 3, 251);
+    background-color: white;
+}
+h3+h4{
+    position:absolute;
+
+    left:20px;
+
+
+    color:rgb(255, 255, 0);
+}
