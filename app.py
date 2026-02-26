@@ -35,12 +35,13 @@ def form():
     gender={}
     image={}
     image_title={}
-    f=request.files['gazou']
-    image['gazou']=f.filename
-    f.save(os.path.join(os.path.dirname(__file__), "static", f.filename))
+    if request.method=='POST':
+        f=request.files['gazou']
+        image['gazou']=f.filename
+        f.save(os.path.join(os.path.dirname(__file__), "static", f.filename))
 
-    image_title['name']=request.form['name']
-    gender['sex']=request.form.get('sex')
+        image_title['name']=request.form['name']
+        gender['sex']=request.form.get('sex')
     #if request.method == "POST":
     #    return redirect(url_for('form'))
     return render_template("form.html",gender=gender,i=image,i_t=image_title)
