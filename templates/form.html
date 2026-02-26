@@ -97,6 +97,23 @@
         </table>
     </div>
     <br>
+    <form method="post"action="{{url_for('form')}}" enctype="multipart/form-data">
+ <div>
+        <input type="file" name="gazou"accept='image/*' required>
+        <input type="text"name='name'placeholder='画像のタイトル入力用' required>
+        <br>
+        <button type="submit">ここで画像を送信だー！！合いの手うおうお</button>
+ 
+</div>
+    </form>
+    <br>
+    <div>
+        <p>{{i_t['name']}}</p>
+
+
+
+   <img src="{{url_for('static', filename=i['gazou']) }}" width="200px">  
+   </div>
     <a href="/">
         戻るためにはスイーツをつんつんして！
         <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg')}}" alt='パフェ' width='200px'>

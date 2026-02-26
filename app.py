@@ -1,7 +1,9 @@
+from importlib.metadata import files
 from flask import Flask, render_template, request, redirect, url_for
 from __init__ import app
 import __init__
 import sqlite3
+import os
 database='database.db'
 
 #app = Flask(__name__)
@@ -31,10 +33,17 @@ def index():
 @app.route("/form",methods=['POST','GET'])
 def form():
     gender={}
+    image={}
+    image_title={}
+    f=request.files['gazou']
+    image['gazou']=f.filename
+    f.save(os.path.join(os.path.dirname(__file__), "static", f.filename))
+
+    image_title['name']=request.form['name']
     gender['sex']=request.form.get('sex')
     #if request.method == "POST":
     #    return redirect(url_for('form'))
-    return render_template("form.html",gender=gender)
+    return render_template("form.html",gender=gender,i=image,i_t=image_title)
  
 
 
@@ -55,3 +64,7 @@ if __name__ == "__main__":
     #import os
     #port = int(os.environ.get("PORT", 5000))
     app.run(debug=True)
+
+    
+
+print(os.getcwd())
