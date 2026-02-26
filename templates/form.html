@@ -108,11 +108,13 @@
     </form>
     <br>
     <div>
-        <p>画像のタイトル【{{i_t['name']}}】</p>
+        {%if i[0]%}
+        <p>画像のタイトル【{{i[0][1]}}】</p>
 
 
 
-   <img src="{{url_for('static', filename=i['gazou']) }}" width="200px">  
+        <img src="{{ url_for('static', filename=i[0][0]) }}" width="200px">
+                {% endif%}
    </div>
     <a href="/">
         戻るためにはスイーツをつんつんして！

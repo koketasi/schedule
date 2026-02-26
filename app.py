@@ -10,10 +10,18 @@ database='database.db'
 
 # 仮のスケジュールデータ（メモリ上）
 data = []
+def init_db():
+    with sqlite3.connect(database) as con:
+        con.execute('CREATE TABLE IF NOT EXISTS schedule1(date TEXT, event TEXT, filename TEXT, filetitle TEXT)')
+        con.commit()
+
+init_db()
+
 
 @app.route('/')#, methods=["GET", "POST"])
 def index():
     con=sqlite3.connect(database)
+    con.execute('CREATE TABLE IF NOT EXISTS schedule1(date TEXT,event TEXT,filename TEXT,filetitle TEXT)')
     list_schedule=con.execute('select * from schedule1').fetchall()
     con.close()
     day={}
@@ -42,9 +50,17 @@ def form():
 
         image_title['name']=request.form['name']
         gender['sex']=request.form.get('sex')
+
+        con=sqlite3.connect(database)
+        con.execute('INSERT INTO schedule1 (filename,filetitle) VALUES(?,?)',(image['gazou'], image_title['name'],))
+        con.commit()
+        con.close()
     #if request.method == "POST":
     #    return redirect(url_for('form'))
-    return render_template("form.html",gender=gender,i=image,i_t=image_title)
+    con=sqlite3.connect(database)
+    file=con.execute("SELECT filename,filetitle FROM schedule1").fetchall()
+    con.close()
+    return render_template("form.html",gender=gender,i=file)
  
 
 
