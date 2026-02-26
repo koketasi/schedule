@@ -58,7 +58,7 @@ def form():
     #if request.method == "POST":
     #    return redirect(url_for('form'))
     con=sqlite3.connect(database)
-    file=con.execute("SELECT filename,filetitle FROM schedule1").fetchall()
+    file=con.execute("SELECT filename, filetitle FROM schedule1 ORDER BY rowid DESC LIMIT 1").fetchall()
     con.close()
     return render_template("form.html",gender=gender,i=file)
  
