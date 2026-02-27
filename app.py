@@ -1,9 +1,11 @@
 from importlib.metadata import files
-from flask import Flask, render_template, request, redirect, url_for
+from flask import  render_template, request, redirect, url_for
 from __init__ import app
-import __init__
 import sqlite3
 import os
+from pathlib  import Path
+
+from werkzeug.utils import secure_filename
 database='database.db'
 
 #app = Flask(__name__)
@@ -45,8 +47,8 @@ def form():
     image_title={}
     if request.method=='POST':
         f=request.files['gazou']
-        image['gazou']=f.filename
-        f.save(os.path.join(os.path.dirname(__file__), "static", f.filename))
+        image['gazou']=secure_filename(f.filename)
+        f.save(Path(app.root_path) /"static"/ image['gazou'])
 
         image_title['name']=request.form['name']
         gender['sex']=request.form.get('sex')
@@ -66,12 +68,13 @@ def form():
 
 @app.route("/register",methods=['POST'])
 def register():
-    date2=request.form['date']
-    event2=request.form['event']
-    con=sqlite3.connect(database)
-    con.execute('INSERT INTO schedule1 VALUES(?,?)',[date2,event2])
-    con.commit()
-    con.close()
+    if request.method=='POST':
+        date2=request.form['date']
+        event2=request.form['event']
+        con=sqlite3.connect(database)
+        con.execute('INSERT INTO schedule1 (date,event)VALUES(?,?)',[date2,event2])
+        con.commit()
+        con.close()
 
 
     return redirect(url_for('index'))
@@ -83,5 +86,8 @@ if __name__ == "__main__":
     app.run(debug=True)
 
     
-
+#@app.route("/debug")
+#def debug():
+#    files = os.listdir(os.path.join(app.root_path,"static"))
+ #   return str(files)
 print(os.getcwd())
