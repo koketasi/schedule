@@ -48,7 +48,7 @@ def form():
     if request.method=='POST':
         f=request.files['gazou']
         image['gazou']=secure_filename(f.filename)
-        f.save(Path(app.root_path) /"static"/ image['gazou'])
+        f.save(Path(app.root_path) /"static"/ secure_filename(f.filename))
 
         image_title['name']=request.form['name']
         gender['sex']=request.form.get('sex')
