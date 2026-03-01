@@ -1,0 +1,36 @@
+table{
+
+    border: solid 1px;
+    border-collapse:collapse;
+}
+th,td{
+    border:solid 1px;
+}
+.a{
+    gap: 1px;
+ display: flex;
+        flex-direction: column;
+}
+.aa{
+    display: flex;
+    align-items: flex-end;
+}
+button[value='delete']{
+    background-color: yellow;
+    margin-left:1px;
+    border:none;
+    border-radius: 30px;
+    font-weight: 600;
+}
+button[value='delete']:hover{
+    background-color:rgb(255 255 128 / 0.5);
+} 
+.text{
+    border:none;
+ 
+}
+input[value="追加ボタンだお"]{
+    font-weight:bold;
+    background-color: aqua;
+    border: none;
+}

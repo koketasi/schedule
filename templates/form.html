@@ -118,7 +118,7 @@
    </div>
     <a href="/">
         戻るためにはスイーツをつんつんして！
-        <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg')}}" alt='パフェ' width='200px'>
+        <img src="{{ url_for('static', filename='20260206_114451228_iOS.jpg')}}" alt='パフェ'    style="width:100%; max-width:300px;">
     </a>
     
 
@@ -139,6 +139,10 @@
         </audio>
     </div>
     <br>
+    <div class="title_you">
+        <p> このサイトのQRコード</p>
+    <img src="{{url_for('static',filename='QR_278047.png')}}" alt="このサイトのQRコード"width='111px'>
+    </div>
     <br>
 </body>
 </html>
