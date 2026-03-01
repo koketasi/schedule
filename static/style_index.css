@@ -21,6 +21,7 @@ button[value='delete']{
     border:none;
     border-radius: 30px;
     font-weight: 600;
+    color:black;
 }
 button[value='delete']:hover{
     background-color:rgb(255 255 128 / 0.5);
@@ -33,4 +34,5 @@ input[value="追加ボタンだお"]{
     font-weight:bold;
     background-color: aqua;
     border: none;
+    color:black;
 }
