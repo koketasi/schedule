@@ -25,7 +25,7 @@ body{
     border-collapse:collapse;
 }
 .hyouzi th,td{
-    border:solid 1px;
+    border:solid 1px black;
 }
 .a{
     gap: 1px;
