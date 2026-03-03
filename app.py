@@ -8,6 +8,7 @@ from pathlib  import Path
 from werkzeug.utils import secure_filename
 from datetime import datetime
 from zoneinfo import ZoneInfo
+
 database='database.db'
 
 #app = Flask(__name__)
@@ -57,8 +58,8 @@ def index():
        #     data.append(task)
         
        # return redirect("/")#ボタン押したら更新?
-    now=datetime.now(ZoneInfo('Asis/Toyo'))
-    day=0
+    now=datetime.now(ZoneInfo("Asia/Tokyo"))
+
     day=(f'{now.year}年{now.month}月{now.day}日{now.hour}時')
     return render_template("index.html",list_schedule=list_schedule,day=day)
 
