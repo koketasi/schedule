@@ -1,2 +1,2 @@
 burannch
-korehaburanti
+korehaburantidesuyo
