@@ -6,6 +6,7 @@ import os
 from pathlib  import Path
 
 from werkzeug.utils import secure_filename
+from datetime import datetime
 database='database.db'
 
 #app = Flask(__name__)
@@ -55,7 +56,10 @@ def index():
        #     data.append(task)
         
        # return redirect("/")#ボタン押したら更新?
-    return render_template("index.html",list_schedule=list_schedule)
+    now=datetime.now()
+    day=0
+    day=(f'{now.year}年{now.month}月{now.day}日{now.hour}時')
+    return render_template("index.html",list_schedule=list_schedule,day=day)
 
 @app.route("/form",methods=['POST','GET'])
 def form():

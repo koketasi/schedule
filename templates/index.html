@@ -12,18 +12,20 @@
     <h3>試しにやってくださいお願いしますよー</h3>
     <h1>↓</h1>
     <form method="POST" action="{{url_for('register')}}">
-    <table border="1">
-        <tr>
+ 
+    <table class="type">
+           <tr>
             <th>日付</th>
             <th>何を起こさせるか</th>
         </tr>
-     
+    
         <tr>
-            <td><input class='text' type='text' name='date' placeholder='日付を入力するチャンス！' required></td>
-            <td><input class='text' type='text' name='event' placeholder='革命チャンス！'cols="30" rows="3" required ></td>
+            <td><textarea class='text'  name='date' placeholder='日付を入力するチャンス！'  rows="2" required maxlength="60"  >{{day}}</textarea></td>
+            <td><textarea class='text'  name='event' placeholder='革命チャンス！' rows="4" required maxlength="200" ></textarea></td>
         </tr>
 
     </table> 
+    
     <br>
     <input type="submit" value="追加ボタンだお">
     </form>
@@ -33,7 +35,7 @@
     <p style="font-size:44px">何も書かれてない</p>  
     {%else%} 
     <div class="aa" >
-    <table >
+    <table class="hyouzi">
             <tr>
                 <th>日付</th>
                 <th>ハッピーイベント!!</th>
