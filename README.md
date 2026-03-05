@@ -26,4 +26,5 @@ Flaskを使ってスケジュール管理アプリを作りました
 
 ## 起動方法
 pip install flask tzdata
+
 python app.py
