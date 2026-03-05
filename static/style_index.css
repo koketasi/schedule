@@ -21,11 +21,11 @@ body{
 }
 .hyouzi{
 
-    border: solid 1px;
+    border: solid 1px ;
     border-collapse:collapse;
 }
 .hyouzi th,td{
-    border:solid 1px black;
+    border:solid 1px ;
 }
 .a{
     gap: 1px;
