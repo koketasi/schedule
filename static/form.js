@@ -47,7 +47,7 @@ console.log(user.name);
 console.log(user.test(5));
 
 console.log(window.innerWidth);
-window.alert('hello2222');
+//window.alert('hello2222');
 
 
 console.log(document.getElementsByTagName('h1')[0]);
